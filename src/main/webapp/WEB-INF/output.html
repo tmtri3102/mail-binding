@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        .result-item {
+            margin-bottom: 15px;
+        }
+        .label {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+    </style>
+    <title>Title</title>
+</head>
+<body>
+<h1>Submitted Settings</h1>
+
+<div class="result-item">
+    <span class="label">Language:</span>
+    <span th:text="${outputMail.language}"></span>
+</div>
+
+<div class="result-item">
+    <span class="label">Page Size:</span>
+    <span th:text="${outputMail.pageSize}"></span> emails per page
+</div>
+
+<div class="result-item">
+    <span class="label">Spam Filter:</span>
+    <span th:text="${outputMail.spamFilter ? 'Enabled' : 'Disabled'}"></span>
+</div>
+
+<div class="result-item">
+    <span class="label">Signature:</span>
+    <pre th:text="${outputMail.signature}"></pre>
+</div>
+</body>
+</html>
